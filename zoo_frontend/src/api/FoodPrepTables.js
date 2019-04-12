@@ -33,7 +33,9 @@ class FoodPrepTables {
       return Promise.reject(new Error('must have id send into patchFoodPrepTables()'));
     }
     if (Object.keys(updates) === undefined || Object.keys(updates).length < 1) {
-      return Promise.reject(new Error('must have object with some keys that will be updated. If meant to delete use deleteFoodPrepTables()'));
+      return Promise.reject(
+        new Error('must have object with some keys that will be updated. If meant to delete use deleteFoodPrepTables()'),
+      );
     }
 
     const uri = `${API_BASE_URL}/api/FoodPrepTables/${id}?access_token=${this.token}`;

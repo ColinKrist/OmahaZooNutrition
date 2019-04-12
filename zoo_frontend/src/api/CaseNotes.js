@@ -37,7 +37,6 @@ class CaseNotes {
     return res;
   }
 
-
   /**
    * Update certain values on a CaseNotes record. Must send in an id
    * @param {string|number} id required

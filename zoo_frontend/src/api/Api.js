@@ -29,7 +29,7 @@ class Api {
       this.token = '';
       throw err;
     }
-  }
+  };
 
   login = async (email, password) => {
     try {
@@ -53,7 +53,7 @@ class Api {
       console.error(err);
       throw err;
     }
-  }
+  };
 
   logout = async () => {
     LocalStorage.setEmail('');
@@ -74,7 +74,7 @@ class Api {
     }
     this.token = '';
     document.cookie = 'authToken=; path=/';
-  }
+  };
 }
 
 export default Api;

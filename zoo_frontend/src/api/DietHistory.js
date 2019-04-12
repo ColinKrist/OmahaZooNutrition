@@ -75,7 +75,9 @@ class DietHistory {
       return Promise.reject(new Error('must have id send into patchDietHistories()'));
     }
     if (Object.keys(updates) === undefined || Object.keys(updates).length < 1) {
-      return Promise.reject(new Error('must have object with some keys that will be updated. If meant to delete use deleteDietHistories()'));
+      return Promise.reject(
+        new Error('must have object with some keys that will be updated. If meant to delete use deleteDietHistories()'),
+      );
     }
 
     const uri = `${API_BASE_URL}/api/DietHistories/${id}?access_token=${this.token}`;

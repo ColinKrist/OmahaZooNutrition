@@ -37,7 +37,6 @@ class Animals {
     return res;
   }
 
-
   /**
    * Update certain values on a Animals record. Must send in an id
    * @param {string|number} id required
