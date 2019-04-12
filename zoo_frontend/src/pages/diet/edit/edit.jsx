@@ -14,7 +14,7 @@ export default class extends Component {
 
   static defaultProps = {
     token: '',
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -33,31 +33,34 @@ export default class extends Component {
           justifyContent: 'center',
         }}
       >
-        <div style={{
-          justifyContent: 'space-around', alignItems: 'center', display: 'flex',
-        }}
+        <div
+          style={{
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            display: 'flex',
+          }}
         >
-          {hasAccess(role, Home.roles) &&
+          {hasAccess(role, Home.roles) && (
             <Link href={Home.link}>
               <Button className={this.props.classes.button} color="secondary" variant="contained">
                 Home
               </Button>
             </Link>
-          }
-          {hasAccess(role, Diet.roles) &&
+          )}
+          {hasAccess(role, Diet.roles) && (
             <Link href={Diet.link}>
               <Button className={this.props.classes.button} color="secondary" variant="contained">
                 View Diets
               </Button>
             </Link>
-          }
-          {hasAccess(role, Diet.new.roles) &&
+          )}
+          {hasAccess(role, Diet.new.roles) && (
             <Link href={Diet.new.link}>
               <Button className={this.props.classes.button} color="secondary" variant="contained">
                 NEW Diet
               </Button>
             </Link>
-          }
+          )}
           {/* TODO add report link logic here */}
           <Link href="/reports/diet">
             <Button className={this.props.classes.button} color="secondary" variant="contained">

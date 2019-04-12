@@ -18,7 +18,17 @@ import Paper from '@material-ui/core/Paper';
 // import { hasAccess, Home, Diet } from '../PageAccess';
 
 import {
-  Animals, CaseNotes, DeliveryContainers, DietChanges, DietHistory, DietPlans, Diets, FoodPrepTables, LifeStages, PrepNotes, Species,
+  Animals,
+  CaseNotes,
+  DeliveryContainers,
+  DietChanges,
+  DietHistory,
+  DietPlans,
+  Diets,
+  FoodPrepTables,
+  LifeStages,
+  PrepNotes,
+  Species,
 } from '../../api';
 
 function TabContainer(props) {
@@ -37,15 +47,12 @@ let id = 0;
 function createData(unit, food) {
   id += 1;
   return {
-    unit, food,
+    unit,
+    food,
   };
 }
 
-const rows = [
-  createData('500 g', 'MIXED GREANS'),
-  createData('330 g', 'SEASONAL FRUIT'),
-];
-
+const rows = [createData('500 g', 'MIXED GREANS'), createData('330 g', 'SEASONAL FRUIT')];
 
 export default class extends Component {
   static propTypes = {
@@ -56,7 +63,7 @@ export default class extends Component {
 
   static defaultProps = {
     token: '',
-  }
+  };
 
   static async getInitialProps({ authToken }) {
     // api helpers on server side
@@ -98,7 +105,6 @@ export default class extends Component {
       serverSpeciesAPI.getSpecies(),
     ]);
 
-
     return {
       Animals: AllAnimals.data,
       CaseNotes: AllCaseNotes.data,
@@ -125,7 +131,6 @@ export default class extends Component {
   handleTabChange = (event, value) => {
     this.setState({ value });
   };
-
 
   render() {
     // const { role } = this.props.account;
@@ -160,14 +165,10 @@ export default class extends Component {
               <Typography style={{ fontSize: 30 }}>Procupine, Indian Crested</Typography>
               <Typography style={{ fontSize: 22 }}>Abigail</Typography>
               <Typography style={{ fontSize: 20, marginTop: 20 }}>Prep Notes</Typography>
-              <div>
-                  No shredded carrot.
-              </div>
+              <div>No shredded carrot.</div>
               <div>
                 <Typography style={{ fontSize: 20, marginTop: 20 }}>History</Typography>
-                <div>
-                  date: changes
-                </div>
+                <div>date: changes</div>
               </div>
             </div>
             <div style={{ flex: 1 }}>
@@ -177,7 +178,7 @@ export default class extends Component {
               </div>
               <Table style={{ marginTop: 20 }}>
                 <TableBody>
-                  {rows.map(row => (
+                  {rows.map((row) => (
                     <TableRow key={row.id}>
                       <TableCell align="left">{row.unit}</TableCell>
                       <TableCell align="left">{row.food}</TableCell>
@@ -186,10 +187,8 @@ export default class extends Component {
                 </TableBody>
               </Table>
             </div>
-
           </div>
         </TabContainer>
-
       </div>
     );
   }

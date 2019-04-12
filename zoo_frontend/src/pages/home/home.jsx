@@ -39,7 +39,7 @@ export default class extends Component {
     };
   }
 
-  handleClick = event => {
+  handleClick = (event) => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
@@ -72,7 +72,6 @@ export default class extends Component {
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
                 onClose={this.handleClose}
-
               >
                 <MenuItem onClick={this.handleClose}>
                   <ListItemIcon>
@@ -100,29 +99,28 @@ export default class extends Component {
                   </ListItemIcon>
                   Special Order
                 </MenuItem>
-
               </Menu>
-              {hasAccess(role, Diet.edit.roles) &&
+              {hasAccess(role, Diet.edit.roles) && (
                 <Link href={Diet.edit.link}>
                   <Button variant="contained" className={classes.button} color="secondary">
-                  Edit Diets
+                    Edit Diets
                   </Button>
                 </Link>
-              }
-              {hasAccess(role, Food.edit.roles) &&
+              )}
+              {hasAccess(role, Food.edit.roles) && (
                 <Link href={Diet.edit.link}>
                   <Button variant="contained" className={classes.button} color="secondary">
                     Edit Foods
                   </Button>
                 </Link>
-              }
-              {hasAccess(role, Food.nicknames.roles) &&
+              )}
+              {hasAccess(role, Food.nicknames.roles) && (
                 <Link href={Food.nicknames.link}>
                   <Button variant="contained" className={classes.button} color="secondary">
                     Edit Food Nicknames
                   </Button>
                 </Link>
-              }
+              )}
             </div>
             <div
               className="ag-theme-material"
@@ -131,10 +129,7 @@ export default class extends Component {
                 width: '600px',
               }}
             >
-              <AgGridReact
-                columnDefs={this.state.columnDefs}
-                rowData={this.state.rowData}
-              />
+              <AgGridReact columnDefs={this.state.columnDefs} rowData={this.state.rowData} />
             </div>
           </div>
         </div>

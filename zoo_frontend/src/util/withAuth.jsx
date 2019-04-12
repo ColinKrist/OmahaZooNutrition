@@ -73,11 +73,11 @@ export default (allowedRoles = ['authenticated']) => (WrappedComponent) => {
 
     static propTypes = {
       token: PropTypes.string,
-    }
+    };
 
     static defaultProps = {
       token: '',
-    }
+    };
 
     constructor(props, context) {
       super(props, context);
@@ -114,13 +114,7 @@ export default (allowedRoles = ['authenticated']) => (WrappedComponent) => {
 
     render() {
       if (!this.state.loading) {
-        return (
-          <WrappedComponent
-            {...this.props}
-            account={this.state.account}
-            api={this.api}
-          />
-        );
+        return <WrappedComponent {...this.props} account={this.state.account} api={this.api} />;
       }
       return null;
     }

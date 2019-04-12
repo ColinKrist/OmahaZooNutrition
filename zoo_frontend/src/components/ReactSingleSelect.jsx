@@ -8,7 +8,7 @@ import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 import PropTypes from 'prop-types';
 
-const styles = theme => ({
+const styles = (theme) => ({
   input: {
     display: 'flex',
     padding: 0,
@@ -183,7 +183,9 @@ SingleValue.defaultProps = {
   innerProps: {},
 };
 
-const ValueContainer = (props) => <div className={props.selectProps.classes.valueContainer}>{props.children}</div>;
+const ValueContainer = (props) => (
+  <div className={props.selectProps.classes.valueContainer}>{props.children}</div>
+);
 
 ValueContainer.propTypes = {
   selectProps: PropTypes.shape({
@@ -227,7 +229,16 @@ const components = {
 
 const IntegrationReactSelect = (props) => {
   const {
-    label, suggestions, onChange, defaultValue, classes, theme, field, form, helperText, error,
+    label,
+    suggestions,
+    onChange,
+    defaultValue,
+    classes,
+    theme,
+    field,
+    form,
+    helperText,
+    error,
   } = props;
   const [selected, setSelected] = useState(false);
 
@@ -240,7 +251,7 @@ const IntegrationReactSelect = (props) => {
   }
 
   const selectStyles = {
-    input: base => ({
+    input: (base) => ({
       ...base,
       color: theme.palette.text.primary,
       '& input': {
@@ -250,11 +261,7 @@ const IntegrationReactSelect = (props) => {
   };
   return (
     <NoSsr>
-      {label &&
-      <Typography color={selected ? 'primary' : 'textPrimary'}>
-        {label}
-      </Typography>
-      }
+      {label && <Typography color={selected ? 'primary' : 'textPrimary'}>{label}</Typography>}
       <Select
         classes={classes}
         styles={selectStyles}
@@ -272,20 +279,20 @@ const IntegrationReactSelect = (props) => {
         onBlur={() => setSelected(false)}
         id={props.id}
       />
-      {(error || helperText) &&
-        <Typography color={error ? 'error' : 'textPrimary'}>
-          {helperText}
-        </Typography>
-      }
+      {(error || helperText) && (
+        <Typography color={error ? 'error' : 'textPrimary'}>{helperText}</Typography>
+      )}
     </NoSsr>
   );
 };
 
 IntegrationReactSelect.propTypes = {
-  suggestions: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string.isRequired, PropTypes.number.isRequired]),
-  })).isRequired,
+  suggestions: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.oneOfType([PropTypes.string.isRequired, PropTypes.number.isRequired]),
+    }),
+  ).isRequired,
   onChange: PropTypes.func,
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   label: PropTypes.string,

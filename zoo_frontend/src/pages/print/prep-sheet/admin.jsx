@@ -11,7 +11,7 @@ class Home extends Component {
 
   static defaultProps = {
     token: '',
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -29,34 +29,30 @@ class Home extends Component {
           justifyContent: 'center',
         }}
       >
-        <div style={{
-          justifyContent: 'space-around', alignItems: 'center', display: 'flex',
-        }}
+        <div
+          style={{
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            display: 'flex',
+          }}
         >
-          <Link
-            href="/department"
-          >
+          <Link href="/department">
             <Button className={this.props.classes.button} color="secondary" variant="contained">
-            Department Management
+              Department Management
             </Button>
           </Link>
 
-          <Link
-            href="/species"
-          >
+          <Link href="/species">
             <Button className={this.props.classes.button} color="secondary" variant="contained">
-            Species Management
+              Species Management
             </Button>
           </Link>
 
-          <Link
-            href="/user"
-          >
+          <Link href="/user">
             <Button className={this.props.classes.button} color="secondary" variant="contained">
-            User Management
+              User Management
             </Button>
           </Link>
-
         </div>
       </div>
     );

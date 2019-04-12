@@ -6,7 +6,17 @@ import PropTypes from 'prop-types';
 // import { hasAccess, Home, Diet } from '../PageAccess';
 
 import {
-  Animals, CaseNotes, DeliveryContainers, DietChanges, DietHistory, DietPlans, Diets, FoodPrepTables, LifeStages, PrepNotes, Species,
+  Animals,
+  CaseNotes,
+  DeliveryContainers,
+  DietChanges,
+  DietHistory,
+  DietPlans,
+  Diets,
+  FoodPrepTables,
+  LifeStages,
+  PrepNotes,
+  Species,
 } from '../../api';
 
 export default class extends Component {
@@ -18,7 +28,7 @@ export default class extends Component {
 
   static defaultProps = {
     token: '',
-  }
+  };
 
   static async getInitialProps({ authToken }) {
     // api helpers on server side
@@ -60,7 +70,6 @@ export default class extends Component {
       serverSpeciesAPI.getSpecies(),
     ]);
 
-
     return {
       Animals: AllAnimals.data,
       CaseNotes: AllCaseNotes.data,
@@ -94,13 +103,14 @@ export default class extends Component {
           justifyContent: 'center',
         }}
       >
-        <div style={{
-          justifyContent: 'space-around', alignItems: 'center', display: 'flex',
-        }}
+        <div
+          style={{
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            display: 'flex',
+          }}
         >
-          <pre>
-            {/* {JSON.stringify(this.props, null, 2)} */}
-          </pre>
+          <pre>{/* {JSON.stringify(this.props, null, 2)} */}</pre>
         </div>
       </div>
     );
