@@ -36,7 +36,9 @@ class RoleMappings {
     const res = await axios.get(geturl);
     await Promise.all(
       res.data.map((roleMapping) => {
-        const deleteUrl = `${API_BASE_URL}/api/RoleMappings/${roleMapping.id}?access_token=${this.token}`;
+        const deleteUrl = `${API_BASE_URL}/api/RoleMappings/${roleMapping.id}?access_token=${
+          this.token
+        }`;
         return axios.delete(deleteUrl);
       }),
     );
