@@ -10,9 +10,10 @@ the other folders will interface on these records directly
 
 ####Kitchen
 
-* Print Prep Card (/print/prep-card/{id})
-* Print Bin Label (/print/bin-label/{id})
-* 'Save Prep Card' -> Print Prep Card (/print/prep-card/{id})
+- Print Prep Card (/print/prep-card/{id})
+- Print Bin Label (/print/bin-label/{id})
+- 'Save Prep Card' -> Print Prep Card (/print/prep-card/{id})
 
 ####Keeper
-* Print Keeper Card (/print/)
+
+- Print Keeper Card (/print/)
