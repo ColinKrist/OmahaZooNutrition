@@ -1,6 +1,15 @@
+
 # Omaha Henry Doorly Zoo Nutrition Platform
 
 🦍 🦏 🍖 🍌
+
+------------------------
+
+# THIS REPO HAS MOVED!
+New Location: https://github.com/ohdzdev/NutritionSystem
+Please direct all issues and future development here.
+
+-------------------------
 
 ### ABOUT
 
